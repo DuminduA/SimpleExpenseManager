@@ -24,6 +24,7 @@ import java.util.Date;
 public class Transaction {
     private Date date;
 
+    private int Transaction_id;
     public Date getDate() {
         return date;
     }
@@ -61,10 +62,11 @@ public class Transaction {
     private double amount;
 
     public Transaction(Date date, String accountNo,
-                       ExpenseType expenseType, double amount) {
+                       ExpenseType expenseType, double amount,int Transaction_id1) {
         this.date = date;
         this.accountNo = accountNo;
         this.expenseType = expenseType;
         this.amount = amount;
+        this.Transaction_id = Transaction_id1;
     }
 }
