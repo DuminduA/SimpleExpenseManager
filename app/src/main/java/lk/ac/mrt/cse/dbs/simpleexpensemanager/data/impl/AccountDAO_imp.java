@@ -2,7 +2,7 @@
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.*;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.DBHandler;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
 
@@ -14,7 +14,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountExcep
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 
-import android.database.sqlite;
+import android.database.sqlite.*;
 
 
 public class AccountDAO_imp implements AccountDAO{
@@ -34,14 +34,16 @@ public class AccountDAO_imp implements AccountDAO{
 
         if(accounts.moveToNext()){
             do{
-            AccountsList.add(accounts.getString(account.getColumnIndex("AccountNo")));
+            AccountsList.add(accounts.getString(accounts.getColumnIndex("AccountNo")));
 
-        }while(accounts.moveToFirst())};
+        }while(accounts.moveToFirst());}
         accounts.close();
         return AccountsList;
 
 
     }
+
+
 
     @Override
     public List<Account> getAccountsList() {
@@ -57,27 +59,31 @@ public class AccountDAO_imp implements AccountDAO{
                                            cursorOb.getString(cursorOb.getColumnIndex("Account_holderName")),
                                            cursorOb.getDouble(cursorOb.getColumnIndex("Balance")));
             AccountList.add(account1);
-        }while(cursorOb.moveToNext())};
-        cursorOb.close()
-        return AccountList;
+        }while(cursorOb.moveToNext());
 
 
-    }
+
+
+    }cursorOb.close();
+        return AccountList;}
+
+
 
     @Override
-    public Account getAccount(String accountNo) {
+    public Account getAccount(String accountNo){
 
-        Cursor cursor = database.rawQuery("Select * from account where AccountNo= ?",new String[] {accountNo});
+        Cursor cursorOb = database.rawQuery("Select * from account where AccountNo= ?",new String[] {accountNo});
 
 
-        Account account1;
-        if(cursor.moveToFirst()) {
+        Account account1 = null;
+        if(cursorOb.moveToFirst()) {
+            do{
              account1 = new Account(cursorOb.getString(cursorOb.getColumnIndex("AccountNo")),
                     cursorOb.getString(cursorOb.getColumnIndex("BankName")),
                     cursorOb.getString(cursorOb.getColumnIndex("Account_holderName")),
                     cursorOb.getDouble(cursorOb.getColumnIndex("Balance")));
-        }while(cursor.moveToNext())};
-        cursor.close();
+        }while(cursorOb.moveToNext());}
+        cursorOb.close();
         return account1;
 
     }
@@ -85,10 +91,10 @@ public class AccountDAO_imp implements AccountDAO{
     @Override
     public void addAccount(Account account) {
 
-        String sql = "INSERT INTO Account VALUES" + "("+account.getAccountNo() + ","+
-               account.getAccountHolderName() + ","+ account.getBankName()+ ","+
-                account.getBalance()+")";
+        String sql = "INSERT INTO Account (AccountNo,AccountHolderName,BankName,Balance) VALUES ('"+account.getAccountNo()+"','"+account.getAccountHolderName()+"','"+
+                account.getBankName()+"','"+account.getBalance()+"')";
         database.execSQL(sql);
+
 
     }
 
@@ -109,12 +115,12 @@ public class AccountDAO_imp implements AccountDAO{
     public void updateBalance(String accountNo, ExpenseType expenseType, double amount)  {
 
 
-        if( expenseType== EXPENSE){
+        if( expenseType== ExpenseType.EXPENSE){
             amount = -amount;
-            String sql = "UPDATE Account SET AccountNo="+ amount ;
+            String sql = "UPDATE Account SET AccountNo="+ amount  ;
             database.execSQL(sql);
         }else{
-            String sql = "UPDATE Account SET AccountNo="+ amount ;
+            String sql = "UPDATE Account SET AccountNo="+ amount;
             database.execSQL(sql);
         }
 

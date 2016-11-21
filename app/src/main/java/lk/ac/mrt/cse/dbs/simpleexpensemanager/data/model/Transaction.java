@@ -69,4 +69,14 @@ public class Transaction {
         this.amount = amount;
         this.Transaction_id = Transaction_id1;
     }
+
+    public Transaction(Date date, String accountNo,
+                       ExpenseType expenseType, double amount) {
+        this.date = date;
+        this.accountNo = accountNo;
+        this.expenseType = expenseType;
+        this.amount = amount;
+
+    }
+
 }

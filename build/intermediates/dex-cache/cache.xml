@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b00d323e17d82fcf30befae708f91441d86fd595">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6288057013150f76f2884b622bcf739bf8f77077\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_3f06f1262c0659bfcb46d736a9b84645b21c1adc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_c4c3a899c395adebb97e95daa488a3361f613f31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_b3f36e99963cfd557131b8f97eede240ee74b9d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_2e78f6b12f5e0f9c69a9ef2e08f812425246f7bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_0ec6132b4d529e940f8319af74ae272c1a39c738\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_abaf264d38e72f67d8424336e5ccf80ad80b9d07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1464410daf4b715ad93962fb99a3a6c3895ceaf2">
+        <dex dex="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_06c48c13b83cf7e5784909685bf0bcea61172ee8\classes.dex" />
+    </item>
+
+</items>
