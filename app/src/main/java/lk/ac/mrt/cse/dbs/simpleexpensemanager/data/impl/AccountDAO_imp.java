@@ -32,11 +32,11 @@ public class AccountDAO_imp implements AccountDAO{
 
         List<String> AccountsList = new ArrayList<String>();
 
-        if(accounts.moveToNext()){
+        if(accounts.moveToFirst()){
             do{
             AccountsList.add(accounts.getString(accounts.getColumnIndex("AccountNo")));
 
-        }while(accounts.moveToFirst());}
+        }while(accounts.moveToNext());}
         accounts.close();
         return AccountsList;
 
@@ -59,12 +59,9 @@ public class AccountDAO_imp implements AccountDAO{
                                            cursorOb.getString(cursorOb.getColumnIndex("Account_holderName")),
                                            cursorOb.getDouble(cursorOb.getColumnIndex("Balance")));
             AccountList.add(account1);
-        }while(cursorOb.moveToNext());
+        }while(cursorOb.moveToNext());}
 
-
-
-
-    }cursorOb.close();
+            cursorOb.close();
         return AccountList;}
 
 
@@ -91,9 +88,18 @@ public class AccountDAO_imp implements AccountDAO{
     @Override
     public void addAccount(Account account) {
 
-        String sql = "INSERT INTO Account (AccountNo,AccountHolderName,BankName,Balance) VALUES ('"+account.getAccountNo()+"','"+account.getAccountHolderName()+"','"+
-                account.getBankName()+"','"+account.getBalance()+"')";
-        database.execSQL(sql);
+        String sql = "INSERT INTO Account (AccountNo,AccountHolderName,BankName,Balance) VALUES (?,?,?,?)";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+
+
+        statement.bindString(1, account.getAccountNo());
+        statement.bindString(3, account.getBankName());
+        statement.bindString(2, account.getAccountHolderName());
+        statement.bindDouble(4, account.getBalance());
+
+
+        statement.executeInsert();
 
 
     }
@@ -105,7 +111,7 @@ public class AccountDAO_imp implements AccountDAO{
     @Override
     public void removeAccount(String accountNo)
     {
-        String sql = "DELETE FROM Account WHERE AccountNo = "+accountNo;
+        String sql = "DELETE FROM Account WHERE AccountNo = '"+accountNo+ "'";
         database.execSQL(sql);
     }
 
@@ -117,10 +123,10 @@ public class AccountDAO_imp implements AccountDAO{
 
         if( expenseType== ExpenseType.EXPENSE){
             amount = -amount;
-            String sql = "UPDATE Account SET AccountNo="+ amount  ;
+            String sql = "UPDATE Account SET Balance=Balance +'"+ amount+ "'"  ;
             database.execSQL(sql);
         }else{
-            String sql = "UPDATE Account SET AccountNo="+ amount;
+            String sql = "UPDATE Account SET Balance=Balance +'"+ amount+ "' WHERE AccountNo = '" + accountNo + "'" ;
             database.execSQL(sql);
         }
 

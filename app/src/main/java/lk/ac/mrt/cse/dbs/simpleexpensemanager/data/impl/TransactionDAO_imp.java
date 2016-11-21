@@ -64,20 +64,23 @@ public class TransactionDAO_imp implements TransactionDAO {
     @Override
     public List<Transaction> getPaginatedTransactionLogs(int limit) {
 
-        String Str = "SELECT * FROM Transaction_tb LIMIT '" + limit+"'";
-        Cursor cursor = database.rawQuery(Str, null);
+
+
+        Cursor cursor = database.rawQuery("SELECT * FROM Transaction_tb LIMIT '" + limit+"'", null);
 
 
         List<Transaction> TransactionLimit = new ArrayList<Transaction>();
-        if (cursor.moveToFirst()) do {
-            Transaction transaction = new Transaction(new Date(cursor.getLong(cursor.getColumnIndex("Date"))),
-                    cursor.getString(cursor.getColumnIndex("AccountNo")),
-                    (cursor.getInt(cursor.getColumnIndex("Expense_Type")) == 0) ? ExpenseType.EXPENSE : ExpenseType.INCOME,
-                    cursor.getDouble(cursor.getColumnIndex("Balance")));
+        if (cursor.moveToFirst()) {
+            do {
+                Transaction transaction = new Transaction(new Date(cursor.getLong(cursor.getColumnIndex("Date"))),
+                        cursor.getString(cursor.getColumnIndex("AccountNo")),
+                        (cursor.getInt(cursor.getColumnIndex("Expense_type")) == 0) ? ExpenseType.EXPENSE : ExpenseType.INCOME,
+                        cursor.getDouble(cursor.getColumnIndex("Amount")));
 
-            TransactionLimit.add(transaction);
+                TransactionLimit.add(transaction);
+            }
+            while (cursor.moveToNext());
         }
-        while (cursor.moveToNext());
             cursor.close();
             return TransactionLimit;
 

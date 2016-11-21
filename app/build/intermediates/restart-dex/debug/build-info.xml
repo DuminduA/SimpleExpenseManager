@@ -5,7 +5,7 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="13269065627414"
+    timestamp="35211355691533"
     token="-8886078643432625937"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -20,21 +20,21 @@
         duration="31" />
     <task
         name="verifier"
-        duration="0" />
+        duration="15" />
 
     <artifact
         location="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="13082369284920"
+        timestamp="31198976377753"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="13269065627414"
+        timestamp="35211355691533"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\dumindu\Desktop\NEW Clone\SimpleExpenseManager\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
